@@ -1,0 +1,26 @@
+*{
+  padding:0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body,html,#root{
+  height: 100%;
+  width: 100%;
+  display: flex;
+}
+.cards{
+  width: 100%;
+  background-color: black;
+  display: flex;
+  gap:1rem;
+}
+.task{
+  background-color: rgb(96, 96, 96);
+  display: flex;
+  flex-direction: column;
+  width: 8rem;
+  padding: 2rem;
+  
+  border-radius: 10px;
+  height: fit-content;
+}
