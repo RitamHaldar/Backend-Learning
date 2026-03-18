@@ -5,6 +5,7 @@ import "dotenv/config"
 import { sendmail } from "./mail.service.js"
 import * as z from "zod"
 import { websearch } from "./websearch.service.js";
+import { pdftool } from "./pdf.service.js";
 
 
 
@@ -41,10 +42,16 @@ const searchTool = tool(
         })
     }
 )
-
+const pdfTool = tool(
+    pdftool,
+    {
+        name: "pdftool",
+        description: "Read a PDF file and return its content",
+    }
+)
 const agent = createAgent({
     model,
-    tools: [mailtool, searchTool]
+    tools: [mailtool, searchTool, pdfTool]
 })
 let messages = []
 while (true) {
